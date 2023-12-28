@@ -1,0 +1,10 @@
+# Use the official PostgreSQL image
+FROM postgres:latest
+
+# Defina a variável de ambiente para o PostgreSQL
+ENV POSTGRES_DB=db_lumi
+ENV POSTGRES_USER=admin
+ENV POSTGRES_PASSWORD=admin
+
+# Copie o arquivo de inicialização do banco de dados
+COPY init.sql /docker-entrypoint-initdb.d/

@@ -1,0 +1,22 @@
+version: "3"
+
+services:
+  # Node.js service
+  app:
+    build:
+      context: .
+      dockerfile: Dockerfile.node
+    ports:
+      - "3000:3000"
+    environment:
+      DATABASE_URL: "postgresql://admin:admin@postgres:5432/db_lumi?schema=public"
+    depends_on:
+      - postgres
+
+  # PostgreSQL service
+  postgres:
+    build:
+      context: .
+      dockerfile: Dockerfile.postgres
+    ports:
+      - "5432:5432"
