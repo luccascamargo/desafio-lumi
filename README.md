@@ -36,7 +36,7 @@ npm run start:dev
 
 O servidor estará acessível em http://localhost:3000.
 
-# BACKEND
+# FRONTEND
 
 ### Instalação de Dependências
 
